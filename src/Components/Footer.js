@@ -6,7 +6,7 @@ function Footer() {
         Designed and Coded by{" "}
         <a
           className="font-medium"
-          href="https://"
+          href="https://reactportfolio-azure.vercel.app/"
           target="_blank"
           rel="noreferrer noopener"
         >
