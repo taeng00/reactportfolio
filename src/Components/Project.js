@@ -58,8 +58,7 @@ Live Preview
            />
 </svg>
 
-php
-코드 복사
+
         <a
           href={githubLink}
           target="_blank"
