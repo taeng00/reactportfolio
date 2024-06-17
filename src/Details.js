@@ -1,4 +1,3 @@
-// Enter all your detials in this file
 // Logo images
 import logogradient from "./assets/taelogo.png";
 import logo from "./assets/taelogo.png";
@@ -22,13 +21,13 @@ import projectImage4 from "./assets/projects/project4.png";
 import projectImage5 from "./assets/projects/project5.png";
 import projectImage6 from "./assets/projects/project6.png";
 
-// Logos
+// 로고 이미지들을 모듈로 가져와서 내보냄
 export const logos = {
   logogradient: logogradient,
   logo: logo,
 };
 
-// Enter your Personal Details here
+// 개인 정보 세부사항
 export const personalDetails = {
   name: "taehyun Kim",
   tagline: "Welcome, webprogramming",
@@ -36,14 +35,13 @@ export const personalDetails = {
   about: `중부대학교 정보보호학과에 4학년으로 재학중인 25살 19학번 김태현 이라고 합니다!`,
 };
 
-// Enter your Social Media URLs here
+// 소셜 미디어 URL
 export const socialMediaUrl = {
   github: "https://github.com/taeng00",
   instagram: "https://www.instagram.com/kimtxehyxn",
 };
 
-
-// Enter my Education Details here
+// 교육 세부사항
 export const eduDetails = [
   {
     Position: "Information Security",
@@ -61,7 +59,7 @@ export const eduDetails = [
   },
 ];
 
-// Tech Stack and Tools
+// 기술 스택 및 도구
 export const techStackDetails = {
   html: html,
   css: css,
@@ -74,15 +72,15 @@ export const techStackDetails = {
   figma: figma,
 };
 
-// Enter your Project Details here
+// 프로젝트 세부사항
 export const projectDetails = [
   {
     title: "1학기 팀 프로젝트",
     image: projectImage1,
     description: '1학기 기말 팀프로젝트 입니다. 1학기 중간고사 때 완성 시켰던 팀소개 페이지가 내장 되어 있습니다.',
     techstack: "React, Next JS",
-    previewLink: "https://google.com",
-    githubLink: "https://github.com",
+    previewLink: "https://24webteam.vercel.app/",
+    githubLink: "https://github.com/taeng00/24webteam",
   },
   {
     title: "1학기 중간 개인 포트폴리오",
@@ -102,7 +100,7 @@ export const projectDetails = [
   },
   {
     title: "HCJ demo",
-    image: projectImage4, 
+    image: projectImage4,
     description: `1학기 중간까지 진행했던 HCJ demo 프로젝트 입니다. 주로 HTML만을 이용하여 제작한 페이지 입니다.`,
     techstack: "HTML/CSS, JavaScript",
     previewLink: "https://web-programming-wheat.vercel.app/",
@@ -126,7 +124,7 @@ export const projectDetails = [
   },
 ];
 
-// Enter your Contact Details here
+// Contact Details 
 export const contactDetails = {
   email: "kth4111502@naver.com",
   phone: "010 1234 5678",

@@ -4,10 +4,18 @@ import { logos, socialMediaUrl } from "../Details";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const { instagram, github} = socialMediaUrl;
+  const { instagram, github } = socialMediaUrl;
   const toggleClass = () => {
     setIsOpen(!isOpen);
   };
+
+  const navLinks = [                               //3.NavLink 항목들을 배열로 정의하고, 이를 map 메서드를 사용하여 동적으로 렌더링
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About" },
+    { path: "/technologies", label: "Technologies" },
+    { path: "/projects", label: "Projects" },
+    { path: "/contact", label: "Contact" },
+  ];
 
   return (
     <header className="container mx-auto md:flex justify-between py-2 max-width">
@@ -35,34 +43,15 @@ function Header() {
       </div>
       <nav className={` ${!isOpen ? "hidden" : null} text-center md:flex justify-between`}>
         <ul className="dark:text-light-content font-medium md:flex items-center md:space-x-5 md:mr-10">
-          <li className="pb-1 md:pb-0">
-            <NavLink to="/" onClick={toggleClass}>
-              Home
-            </NavLink>
-          </li>
-          <li className="pb-1 md:pb-0">
-            <NavLink to="/about" onClick={toggleClass}>
-              About
-            </NavLink>
-          </li>
-          <li className="pb-1 md:pb-0">
-            <NavLink to="/technologies" onClick={toggleClass}>
-              Technologies
-            </NavLink>
-          </li>
-          <li className="pb-1 md:pb-0">
-            <NavLink to="/projects" onClick={toggleClass}>
-              Projects
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact" onClick={toggleClass}>
-              Contact
-            </NavLink>
-          </li>
+          {navLinks.map((link, index) => (
+            <li key={index} className="pb-1 md:pb-0">
+              <NavLink to={link.path} onClick={toggleClass}>
+                {link.label}
+              </NavLink>
+            </li>
+          ))}
         </ul>
         <ul className="flex justify-evenly items-center my-5 md:my-0 md:space-x-5 md:mr-5">
-          
           <li>
             <a href={instagram} target="_blank" rel="noreferrer noopener">
               <svg
