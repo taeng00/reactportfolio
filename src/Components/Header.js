@@ -1,15 +1,16 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { logos, socialMediaUrl } from "../Details";
+import React, { useState } from "react";  // 리액트와 useState 훅을 불러옵니다.
+import { NavLink } from "react-router-dom";  // react-router-dom에서 NavLink를 불러옵니다.
+import { logos, socialMediaUrl } from "../Details";  // ../Details에서 logos와 socialMediaUrl을 불러옵니다.
 
 function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-  const { instagram, github } = socialMediaUrl;
-  const toggleClass = () => {
+  const [isOpen, setIsOpen] = useState(false);  // isOpen 상태와 setIsOpen 함수를 useState를 사용하여 정의합니다.
+  const { instagram, github } = socialMediaUrl;  // socialMediaUrl에서 instagram과 github을 추출합니다.
+
+  const toggleClass = () => {  // toggleClass 함수 정의: isOpen 상태를 반전시키는 역할을 합니다.
     setIsOpen(!isOpen);
   };
 
-  const navLinks = [                               //3.NavLink 항목들을 배열로 정의하고, 이를 map 메서드를 사용하여 동적으로 렌더링
+  const navLinks = [  //3.NavLink 항목들을 배열로 정의하고, 이를 map 메서드를 사용하여 동적으로 렌더링
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
     { path: "/technologies", label: "Technologies" },
@@ -20,9 +21,12 @@ function Header() {
   return (
     <header className="container mx-auto md:flex justify-between py-2 max-width">
       <div className="flex justify-between items-center py-2 md:py-10">
+        {/* 로고 이미지를 클릭하면 홈으로 이동하는 NavLink */}
         <NavLink to="/">
           <img className="w-36 " src={logos.logogradient} alt="logo" />
         </NavLink>
+        {/*  div와 svg 요소는 모바일 화면에서 네비게이션 메뉴를 토글하는 버튼으로 사용되며, 
+        클릭하면 toggleClass 함수가 실행되어 네비게이션 메뉴의 펼침/닫힘 상태를 제어 */}
         <div onClick={toggleClass} className="cursor-pointer">
           <svg
             className="stroke-dark-heading dark:stroke-white md:hidden"
@@ -41,18 +45,22 @@ function Header() {
           </svg>
         </div>
       </div>
+      {/* 네비게이션 메뉴 */}
       <nav className={` ${!isOpen ? "hidden" : null} text-center md:flex justify-between`}>
         <ul className="dark:text-light-content font-medium md:flex items-center md:space-x-5 md:mr-10">
           {navLinks.map((link, index) => (
             <li key={index} className="pb-1 md:pb-0">
+              {/* NavLink를 사용하여 각 링크를 동적으로 렌더링 */}
               <NavLink to={link.path} onClick={toggleClass}>
                 {link.label}
               </NavLink>
             </li>
           ))}
         </ul>
+        {/* 소셜 미디어 아이콘들 */}
         <ul className="flex justify-evenly items-center my-5 md:my-0 md:space-x-5 md:mr-5">
           <li>
+            {/* Instagram 아이콘 */}
             <a href={instagram} target="_blank" rel="noreferrer noopener">
               <svg
                 className="dark:fill-light-heading fill-dark-heading"
@@ -67,6 +75,7 @@ function Header() {
             </a>
           </li>
           <li>
+            {/* Github 아이콘 */}
             <a href={github} target="_blank" rel="noreferrer noopener">
               <svg
                 className="dark:fill-light-heading fill-dark-heading"
